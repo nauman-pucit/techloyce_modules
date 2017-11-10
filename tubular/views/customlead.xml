@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="custom_Lead_form_view">
+            <field name="name">user.custom_Lead</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Delivery Information">
+                        <group>
+                            <group>
+                                <field name="pickup_address"/>
+                                <field name="pickup_postcode"/>
+                                <field name="pickup_time"/>
+                                <field name="vehicle"/>
+                                <field name="congestion_zone"/>
+
+                            </group>
+                            <group>
+                                <field name="dropoff_address"/>
+                                <field name="dropoff_postcode"/>
+                                <field name="travel_duration"/>
+
+                                <field name="stops"/>
+                                <field name="stairs"/>
+                            </group>
+
+                        </group>
+                    </page>
+                    <page string="Tasks">
+                        <field name="task_ids" mode="tree,form">
+
+                            <form string="Task form" >
+                                <group>
+                                    <field name="task_name"/>
+                                    <field name="time"/>
+                                    <field name="is_complete"/>
+                                </group>
+                                <field name="user_id">
+                                    <tree string="Assigned To">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                                <field name="comment_ids">
+                                    <tree string="Add Comment">
+                                        <field name="name"/>
+                                    </tree>
+                                    <form string="Add Comment">
+                                        <field name="name"/>
+                                    </form>
+                                </field>
+                            </form>
+                            <tree string="Task tree" >
+                                <field name="task_name"/>
+                                <field name="time"/>
+                                <field name="user_id"/>
+                                <field name="is_complete"/>
+                                <field name="comment_ids"/>
+                                    <!--<tree>-->
+                                        <!--<field name="name"/>-->
+                                    <!--</tree>-->
+                                    <!--<form>-->
+                                        <!--<field name="name"/>-->
+                                    <!--</form>-->
+                                <!--</field>-->
+                            </tree>
+                        </field>
+                    </page>
+                    <!--<page string="Order Lines">-->
+                    <!--<field name="task_ids" mode="tree">-->
+                    <!--<form string="Sales Order Lines">-->
+                    <!--<group>-->
+                    <!--<field name="text"/>-->
+                    <!--<field name="time"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="is_complete"/>-->
+                    <!--</group>-->
+                    <!--</form>-->
+                    <!--<tree string="Sales Order Lines" editable="bottom" decoration-info="invoice_status=='to invoice'">-->
+                    <!--<field name="text"/>-->
+                    <!--<field name="time"/>-->
+                    <!--<field name="user_id"/>-->
+                    <!--<field name="is_complete"/>-->
+                    <!--</tree>-->
+                    <!--</field>-->
+
+                    <!--</page>-->
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="task_form_view">
+        <field name="name">tubular_task</field>
+        <field name="model">tubular.task</field>
+        <field name="arch" type="xml">
+            <form string="Task Form">
+                <group>
+                    <field name="task_name"/>
+                    <field name="time"/>
+                    <field name="user_id"/>
+                    <field name="is_complete"/>
+                    <field name="task_id"/>
+                    <field name="comment_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="task_tree_view">
+        <field name="name">task_tree</field>
+        <field name="model">tubular.task</field>
+        <field name="arch" type="xml">
+            <tree string="Lead Task">
+                <field name="task_name"/>
+                <field name="time"/>
+                <field name="user_id"/>
+                <field name="is_complete"/>
+                <field name="comment_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="calendar_view_leads_task" model="ir.ui.view">
+        <field name="name">tubular.task.calendar</field>
+        <field name="model">tubular.task</field>
+        <field name="arch" type="xml">
+            <calendar string="Leads Tasks" color="is_complete" date_start="time">
+                <field name="task_name"/>
+            </calendar>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="launch_taskview">
+        <field name="name">Tasks</field>
+        <field name="res_model">tubular.task</field>
+        <field name="view_mode">tree,calendar,form</field>
+    </record>
+    <menuitem id="main_activities_menu" name="Activities"/>
+    <menuitem id="activities_menu" name="Lead Task" parent="main_activities_menu"
+              action="launch_taskview"/>
+</odoo>

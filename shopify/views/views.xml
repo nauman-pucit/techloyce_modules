@@ -1,0 +1,60 @@
+<odoo>
+    <data >
+
+        <!-- explicit list view definition -->
+        <!--
+        <record model="ir.ui.view" id="shopify.list">
+          <field name="name">shopify list</field>
+          <field name="model">shopify.shopify</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+              <field name="value"/>
+              <field name="value2"/>
+            </tree>
+          </field>
+        </record>
+        -->
+
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="shopify.action_window">
+          <field name="name">shopify window</field>
+          <field name="res_model">shopify.shopify</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="shopify.action_server">
+          <field name="name">shopify server</field>
+          <field name="model_id" ref="model_shopify_shopify"/>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+
+        <!-- Top menu item -->
+        <!--
+        <menuitem name="shopify" id="shopify.menu_root"/>
+        -->
+        <!-- menu categories -->
+        <!--
+        <menuitem name="Menu 1" id="shopify.menu_1" parent="shopify.menu_root"/>
+        <menuitem name="Menu 2" id="shopify.menu_2" parent="shopify.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="shopify.menu_1_list" parent="shopify.menu_1"
+                  action="shopify.action_window"/>
+        <menuitem name="Server to list" id="shopify" parent="shopify.menu_2"
+                  action="shopify.action_server"/>
+        -->
+    </data>
+</odoo>

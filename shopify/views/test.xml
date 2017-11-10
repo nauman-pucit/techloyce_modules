@@ -1,0 +1,12 @@
+<data noupdate="1">
+    <record id="my_record_01" model="my.model">
+        <field name="field_name">value</field>
+        <tree create="false" delete="false">
+        </tree>
+    </record>
+    <record id="my_record_01" model="my.model">
+        <field name="field_name">value</field>
+        <form edit="false" create="false" delete="false">
+        </form>
+    </record>
+</data>
