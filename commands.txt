@@ -1,0 +1,37 @@
+sudo apt-get -y install gdebi
+https://www.google.com/chrome/browser/desktop/index.html?brand=CHBD&gclid=CjwKCAjwhOvPBRBxEiwAx2nhLuOxo-EN5HJQ3Ykoi6T9pouAcEit1HSwldf1MTiYo8Lv7D-maC6VuRoC9UMQAvD_BwE
+https://www.jetbrains.com/pycharm/download/#section=windows
+
+
+delivery@techloyce.com
+adeel.ahmad@techloyce.com
+
+
+sudo ps aux | grep odoo
+sudo kill -9 
+sudo service odoo-server stop
+sudo chmod 777 -R /odoo
+sudo -H gnome-terminal
+
+
+
+
+##########################----------Git Commands-----------##########################
+
+echo "# testing" >> README.md
+git init 
+git add README.md 
+git commit -am "first commit"
+git remote add origin https://github.com/nauman-qc/testing.git
+git config --global user.email "nauman.qctechnologies@gmail.com"
+git config --global user.name "nauman-qc"
+git add .
+git commit -m "first commit"[master (root-commit) 3b00ce4] first commit
+git push -u origin master
+Username for 'https://github.com': nauman.qctechnologies@gmail.com
+
+
+
+sudo -u postgres createuser --interactive
+ALTER USER nauman WITH PASSWORD 'password';
+ ALTER USER nauman WITH LOGIN;

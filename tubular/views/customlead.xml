@@ -77,8 +77,7 @@
                     <span> (<field name="stops"/>) </span><br/>
                     <span><field name="travel_duration"/> </span><br/>
                     <span><field name="pickup_time"/> </span><br/>
-                    <span><field name="vehicle"/> </span><br/>
-                    <b><field name="partner_name"/></b>
+                    <span><field name="vehicle"/> </span>
                 </xpath>
             </field>
         </record>
