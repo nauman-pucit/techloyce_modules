@@ -31,7 +31,7 @@
                     <page string="Tasks">
                         <field name="task_ids" mode="tree,form">
 
-                            <form string="Task form" >
+                            <form string="Task form">
                                 <group>
                                     <field name="task_name"/>
                                     <field name="time"/>
@@ -51,44 +51,36 @@
                                     </form>
                                 </field>
                             </form>
-                            <tree string="Task tree" >
+                            <tree string="Task tree">
                                 <field name="task_name"/>
                                 <field name="time"/>
                                 <field name="user_id"/>
                                 <field name="is_complete"/>
                                 <field name="comment_ids"/>
-                                    <!--<tree>-->
-                                        <!--<field name="name"/>-->
-                                    <!--</tree>-->
-                                    <!--<form>-->
-                                        <!--<field name="name"/>-->
-                                    <!--</form>-->
-                                <!--</field>-->
+
                             </tree>
                         </field>
                     </page>
-                    <!--<page string="Order Lines">-->
-                    <!--<field name="task_ids" mode="tree">-->
-                    <!--<form string="Sales Order Lines">-->
-                    <!--<group>-->
-                    <!--<field name="text"/>-->
-                    <!--<field name="time"/>-->
-                    <!--<field name="user_id"/>-->
-                    <!--<field name="is_complete"/>-->
-                    <!--</group>-->
-                    <!--</form>-->
-                    <!--<tree string="Sales Order Lines" editable="bottom" decoration-info="invoice_status=='to invoice'">-->
-                    <!--<field name="text"/>-->
-                    <!--<field name="time"/>-->
-                    <!--<field name="user_id"/>-->
-                    <!--<field name="is_complete"/>-->
-                    <!--</tree>-->
-                    <!--</field>-->
 
-                    <!--</page>-->
                 </notebook>
             </field>
         </record>
-
+        <record model="ir.ui.view" id="custom_Lead_kanban_form_view">
+            <field name="name">user.custom_kanbon_Lead</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <br/><b><span><field name="pickup_postcode"/></span>
+                    <img src="/tubular/static/description/arrow.jpeg" width="20" height="14"/>
+                    <span> <field name="dropoff_postcode"/></span></b>
+                    <span> (<field name="stops"/>) </span><br/>
+                    <span><field name="travel_duration"/> </span><br/>
+                    <span><field name="pickup_time"/> </span><br/>
+                    <span><field name="vehicle"/> </span><br/>
+                    <b><field name="partner_name"/></b>
+                </xpath>
+            </field>
+        </record>
     </data>
 </odoo>
